@@ -1,9 +1,9 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-project(CHUCKY_DBC_EXTRACTOR)
+project(CHUCKY_MAP_EXTRACTOR)
 
-set(EXECUTABLE_NAME "dbc-extractor")
+set(EXECUTABLE_NAME "map-extractor")
 
 
 set(SRC_FILES
@@ -382,6 +382,6 @@ link_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/StormLib/src
 )
 
-add_executable( dbc_extractor dbc_extractor.cpp ExtractorCommon.cpp TypeConversion.cpp )
-target_link_libraries(dbc_extractor StormLib)
+add_executable( map_extractor map_extractor.cpp MaNGOS_map.cpp ExtractorCommon.cpp TypeConversion.cpp )
+target_link_libraries(map_extractor StormLib)
 
