@@ -364,7 +364,6 @@ set(ZLIB_BZIP2_FILES
     StormLib/src/zlib/trees.c
     StormLib/src/zlib/zutil.c
 )
-#    StormLib/src/zlib/compress_zlib.c
 
 message(STATUS "Using MSVC")
 add_definitions(-D_7ZIP_ST -DBZ_STRICT_ANSI -DWIN32)
@@ -375,13 +374,12 @@ add_library(StormLib STATIC ${SRC_FILES} ${SRC_ADDITIONAL_FILES})
 target_link_libraries(StormLib ${LINK_LIBS})
 
 include_directories(
-	${CMAKE_CURRENT_SOURCE_DIR}/StormLib/src
+	${CMAKE_SOURCE_DIR}/StormLib/src
 )
 
 link_directories(
-	${CMAKE_CURRENT_SOURCE_DIR}/StormLib/src
+	${CMAKE_SOURCE_DIR}/StormLib/src
 )
 
-add_executable( map_extractor map_extractor.cpp MaNGOS_map.cpp ExtractorCommon.cpp TypeConversion.cpp )
+add_executable( map_extractor map_extractor.cpp MPQarchive.cpp MaNGOS_map.cpp ExtractorCommon.cpp TypeConversion.cpp )
 target_link_libraries(map_extractor StormLib)
-
